@@ -1,10 +1,14 @@
 'use client';
+
 import { useEffect, useState } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 
-{ /* This file is a client component in Next.js 13+ with the app directory enabled. */ }
+type Props = {
+    onToggleProjects: () => void;
+    isVisible: boolean;
+  };
 
-export default function AboutMe({ onToggleProjects, showProjects }) {
+export default function AboutMe({ onToggleProjects, isVisible }: Props) {
     const [showContent, setShowContent] = useState(false);
 
     useEffect(() => {
@@ -33,7 +37,7 @@ export default function AboutMe({ onToggleProjects, showProjects }) {
                     className={`transition-all duration-700 delay-100 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
                         } h-[180px] overflow-hidden`}
                 >
-                    <p className="text-lg mt-2 text-[#ce9178]">
+                    <p className="text-xl leading-relaxed mt-2 text-[#ce9178] max-w-3xl">
                         <Typewriter
                             words={[
                                 'I approached programming in college, when I discovered the world of code for the first time. The first lines written for fun turned into a passion as I deepened the courses.',
@@ -56,7 +60,7 @@ export default function AboutMe({ onToggleProjects, showProjects }) {
                         onClick={onToggleProjects}
                         className="bg-[#007acc] hover:bg-[#ce9178] text-white px-5 py-2 rounded-md text-sm font-semibold transition-colors duration-300"
                     >
-                        {showProjects ? 'Hide Projects' : 'View My Projects'}
+                        {isVisible ? 'Hide Projects' : 'View My Projects'}
                     </button>
                 </div>
             </div>
