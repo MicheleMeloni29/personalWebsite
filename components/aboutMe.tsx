@@ -6,7 +6,7 @@ import { Typewriter } from 'react-simple-typewriter';
 type Props = {
     onToggleProjects: () => void;
     isVisible: boolean;
-  };
+};
 
 export default function AboutMe({ onToggleProjects, isVisible }: Props) {
     const [showContent, setShowContent] = useState(false);
@@ -24,7 +24,7 @@ export default function AboutMe({ onToggleProjects, isVisible }: Props) {
             >
                 {/* IDE-style header bar */}
                 <div className="flex items-center justify-between border-b border-[#3c3c3c] pb-3 mb-4">
-                    <span className="text-sm text-[#9cdcfe]">~/portfolio/src/components/aboutMe.jsx</span>
+                    <span className="text-sm text-[#9cdcfe]">~/portfolio/src/components/aboutMe.tsx</span>
                     <div className="space-x-1">
                         <span className="inline-block w-3 h-3 bg-red-500 rounded-full" />
                         <span className="inline-block w-3 h-3 bg-yellow-500 rounded-full" />

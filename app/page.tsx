@@ -2,9 +2,11 @@
 
 import React, { useState } from 'react';
 import Header from '../components/header';
+import Timeline from '../components/timeline';
 import AboutMe from '../components/aboutMe';
 import MyProjects from '../components/myProjects';
 import Footer from '../components/footer';
+
 
 export default function Home() {
   const [showProjects, setShowProjects] = useState(false);
@@ -32,10 +34,9 @@ export default function Home() {
             onToggleProjects={handleToggleProjects}
           />
           <MyProjects visible={showProjects} />
+          <Timeline />
         </div>
-
         <Footer />
-
       </div>
     </div>
   );
